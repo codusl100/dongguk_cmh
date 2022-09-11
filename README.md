@@ -9,3 +9,4 @@
 - AWS
 
 ## 🧩 DB ER Diagram
+![DGU CMH APP ERD](https://user-images.githubusercontent.com/77263479/189514458-edff3173-a997-41c2-96ae-0ae0b5c56d3b.jpeg)
