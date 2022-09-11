@@ -56,22 +56,6 @@ router.post(
         };
     });
   
-  //Read
-  router.get('/', function (req, res, next) {
-    const id = req.query.user_id;
-    //var condition = id ? { id: { [Op.like]: `%${id}%` } } : null;
-  
-    User.findAll()
-      .then(data => {
-        res.status(200).send(data);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while retrieving tutorials."
-        });
-      });
-  });
   
   // Delete
   router.delete('/:id', function (req, res, next) {

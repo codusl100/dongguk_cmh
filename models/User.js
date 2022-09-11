@@ -1,5 +1,7 @@
 // models/User.js
 const mongoose = require('mongoose')
+const bcrypt = require("bcryptjs"); // 암호화 모듈
+const jwt = require("jsonwebtoken");
 
 // mongoDB에 회원정보를 저장할 스키마를 userSchema에 정의
 const userSchema = mongoose.Schema({
@@ -25,6 +27,24 @@ const userSchema = mongoose.Schema({
     },
     
 })
+
+// db에 저장된 유저와 비교
+userSchema.methods.comparePassword=function(plainPassword, cb){
+    bcrypt.compare(plainPassword, this.password, function(err, isMatch){
+        if(err) return cb(err);
+        cb(null, isMatch);
+    });
+}
+
+userSchema.methods.generateToken=function(cb){
+    const user=this;
+    const token=jwt.sign(user._id.toHexString(), 'secretToken');
+    user.token=token;
+    user.save(function(err, user){
+        if(err) return cb(err);
+        cb(null, user);
+    });
+}
 
 // 데이터베이스 모델을 정의
 const User = mongoose.model('User', userSchema)

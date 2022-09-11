@@ -27,10 +27,11 @@ app.use("/user/register", require("./routes/register"));
 connectDB();
 app.use("/user/auth", require("./routes/auth"));
 app.use(cookieParser());
+app.use("/user/login", require("./routes/login"))
 //app.get('/user/logOut', function(req, res) {
 //    return res.clearCookie('User').end();
 //});
-//app.use('/home', require("./routes/home"));
+app.use('/home', require("./routes/home"));
 //app.use('/board', require("./routes/board"));
 //app.use('/mypage', require("./routes/mypage"));
 //app.post('/imageupload', require("./routes/DL"));
