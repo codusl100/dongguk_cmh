@@ -9,7 +9,9 @@ const cors = require("cors");
 var corsOptions = {
     origin: "http://localhost:3000"
   };
-  
+
+const upload = require('./routes/waste-upload')
+
 app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
@@ -28,6 +30,9 @@ connectDB();
 app.use("/user/auth", require("./routes/auth"));
 app.use(cookieParser());
 app.use("/user/login", require("./routes/login"))
+app.post('/single', upload.single('img'), (req, res, next) => {
+  res.status(201).send(req.file);
+});
 //app.get('/user/logOut', function(req, res) {
 //    return res.clearCookie('User').end();
 //});
