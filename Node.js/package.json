@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/codusl100/dongguk_cmh#readme",
   "dependencies": {
+    "@aws-sdk/abort-controller": "^3.171.0",
+    "@aws-sdk/client-s3": "^3.171.0",
+    "aws-sdk": "^2.1220.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
@@ -24,6 +27,7 @@
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.0",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^3.0.1"
   }
 }

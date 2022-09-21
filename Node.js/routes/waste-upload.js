@@ -2,17 +2,19 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
+const multerS3 = require("multer-s3");
+const AWS = require("aws-sdk");
 
 const s3 = new AWS.S3({
-    accessKeyId: ' ', // 액세스 키 입력
-    secretAccessKey: ' ', // 비밀 액세스 키 입력
-    region: ' ', // 사용자 사용 지역 (서울의 경우 ap-northeast-2)
+    accessKeyId: 'AKIA5NMQXBD2K6Q75N7F', // 액세스 키 입력
+    secretAccessKey: 'GDX9G5+tqkEMF5HyINtPep4ZLBhjLXT7TQWVbk4Y', // 비밀 액세스 키 입력
+    region: 'ap-northeast-2', // 사용자 사용 지역 (서울의 경우 ap-northeast-2)
 });
 
 const upload = multer({ 
     storage: multerS3({ 
         s3: s3, 
-        bucket: 'cmh-project', // 버킷 이름 입력 
+        bucket: 'cmh-project', 
         contentType: multerS3.AUTO_CONTENT_TYPE,
         key: (req, file, cb) => { 
             cb(null, `uploads/${Date.now()}_${file.originalname}}`)
