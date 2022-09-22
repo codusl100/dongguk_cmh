@@ -2,7 +2,7 @@ const express = require("express");
 const connectDB = require("./db")
 const app = express();
 require('dotenv').config();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require("cors");
@@ -38,8 +38,8 @@ app.post('/single', upload.single('img'), (req, res, next) => {
 //    return res.clearCookie('User').end();
 //});
 app.use('/mypage', require("./routes/mypage"));
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
 //app.post('/imageupload', require("./routes/DL"));
 //app.use('/pay', require())
