@@ -1,4 +1,5 @@
 // 폐기물 사진 촬영 업로드
+require('dotenv').config();
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
@@ -6,9 +7,9 @@ const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
 
 const s3 = new AWS.S3({
-    accessKeyId: 'AKIA5NMQXBD2K6Q75N7F', // 액세스 키 입력
-    secretAccessKey: 'GDX9G5+tqkEMF5HyINtPep4ZLBhjLXT7TQWVbk4Y', // 비밀 액세스 키 입력
-    region: 'ap-northeast-2', // 사용자 사용 지역 (서울의 경우 ap-northeast-2)
+    accessKeyId: process.env.accessKeyId,
+    secretAccessKey: process.env.secretAccessKey,
+    region: process.env.region
 });
 
 const upload = multer({ 
