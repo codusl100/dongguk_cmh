@@ -6,7 +6,7 @@
 ## 🛠️ 개발환경
 - Node.js
 - MongoDB
-- AWS
+- Oracle
 
 ## 🧩 DB ER Diagram
 ![DGU CMH APP ERD](https://user-images.githubusercontent.com/77263479/189514458-edff3173-a997-41c2-96ae-0ae0b5c56d3b.jpeg)
@@ -20,3 +20,4 @@
 ![image](https://user-images.githubusercontent.com/77263479/192004873-122c9e2a-62b9-494b-80e3-61686a1417fe.png)
 
 ## 📱 서비스 UI 
+![image](https://user-images.githubusercontent.com/77263479/192005540-f6f47e80-8784-4bc0-af5f-7864e02cdaa1.png)
