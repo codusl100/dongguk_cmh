@@ -8,9 +8,6 @@
 - MongoDB
 - Oracle
 
-## 🧩 DB ER Diagram
-![DGU CMH APP ERD](https://user-images.githubusercontent.com/77263479/189514458-edff3173-a997-41c2-96ae-0ae0b5c56d3b.jpeg)
-
 ## ✍️ 주요기능
 - 카메라 촬영 후 대형폐기물 종류 분석
 - 분석 후 폐기물 정보 확인
